@@ -92,7 +92,7 @@ export function ProgressTable() {
             <tbody>
               {processedMembers.map((member) => (
                 <tr key={member.id}>
-                  <td className="p-2 text-sm font-medium text-white">{member.name}</td>
+                  <td className="sticky left-0 z-20 p-2 text-sm font-medium text-white bg-gray-900">{member.name}</td>
                   <td className="p-2 text-sm text-right text-white">{member.stars}</td>
                   <td className="p-2 text-sm text-right text-white">{member.local_score}</td>
                   {days.map((day) => {

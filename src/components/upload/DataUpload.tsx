@@ -9,23 +9,39 @@ export function DataUpload() {
   const [showManualInput, setShowManualInput] = useState(false)
 
   return (
-    <div className="min-h-[400px] flex items-center justify-center">
-      <div className="w-full max-w-md p-6 space-y-6">
+    <div className="min-h-[400px] flex items-center justify-center p-4">
+      <div className="w-full max-w-xl">
         {/* Logo */}
-        <div className="flex justify-center">
-          <svg className="w-24 h-24" viewBox="0 0 100 100">
+        <div className="flex justify-center mb-6">
+          <svg className="w-20 h-20 md:w-24 md:h-24" viewBox="0 0 100 100">
             {/* ... Logo SVG content ... */}
           </svg>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-white mb-2">StarTrack</h1>
-            <p className="text-lg font-medium text-blue-100">Code Down to Christmas</p>
-            <p className="text-sm text-blue-200 mt-2">Advent of Code Progress Visualization</p>
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">StarTrack</h1>
+            <p className="text-base md:text-lg font-medium text-blue-100">Code Down to Christmas</p>
+            <p className="text-xs md:text-sm text-blue-200 mt-2">Advent of Code Progress Visualization</p>
           </div>
 
-          <div className="space-y-6 mt-8">
+          <div className="mt-4 mb-6 text-xs md:text-sm text-blue-200 bg-blue-900/20 p-3 md:p-4 rounded-lg">
+            <p className="font-medium mb-2">How to get your leaderboard data:</p>
+            <ol className="list-decimal list-inside space-y-1 text-blue-300">
+              <li>
+                Go&nbsp;to
+                <div className="text-blue-100 hover:text-white underline ml-3 md:ml-5 break-words">
+                  <a href="https://adventofcode.com/2024/leaderboard/private" target="_blank" rel="noopener noreferrer">adventofcode.com/2024/leaderboard/private</a>
+                  <div className="text-xs text-blue-300 mt-0.5">(adjust year as needed)</div>
+                </div>
+              </li>
+              <li>View your private leaderboard</li>
+              <li>Find and click [API] button</li>
+              <li>Copy the [JSON] link URL or its content</li>
+            </ol>
+          </div>
+
+          <div className="w-full max-w-xl space-y-6 mt-8">
             <FileUploadZone />
 
             <div className="relative">

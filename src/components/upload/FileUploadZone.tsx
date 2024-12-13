@@ -1,13 +1,12 @@
 import { useData } from '../../context/DataContext'
 import { validateData } from '../../lib/utils/validation'
+import { DragEvent, useState } from 'react'
 
 export function FileUploadZone() {
   const { setData, setError } = useData()
+  const [isDragging, setIsDragging] = useState(false)
 
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (!file) return
-
+  const handleFile = async (file: File) => {
     try {
       const text = await file.text()
       const jsonData = JSON.parse(text)
@@ -29,8 +28,51 @@ export function FileUploadZone() {
     }
   }
 
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (!file) return
+    await handleFile(file)
+  }
+
+  const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsDragging(true)
+  }
+
+  const handleDragLeave = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsDragging(false)
+  }
+
+  const handleDrop = async (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsDragging(false)
+
+    const file = e.dataTransfer.files?.[0]
+    if (!file) return
+    
+    if (!file.name.endsWith('.json')) {
+      setError('Please upload a JSON file')
+      return
+    }
+
+    await handleFile(file)
+  }
+
   return (
-    <div className="relative border-2 border-dashed border-white/30 rounded-xl p-6 text-center cursor-pointer hover:border-white/50 transition-colors">
+    <div 
+      className={`relative border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-colors
+        ${isDragging 
+          ? 'border-blue-400 bg-blue-500/10' 
+          : 'border-white/30 hover:border-white/50'
+        }`}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       <input
         type="file"
         accept=".json"
