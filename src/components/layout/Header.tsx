@@ -22,7 +22,7 @@ export function Header() {
         {/* Right side */}
         <div className="flex items-center">
           <a
-            href="https://www.buymeacoffee.com/Lonli-LokliV"
+            href="https://www.buymeacoffee.com/LonliLokliV"
             target="_blank"
             rel="noopener noreferrer"
             className="h-8 px-2 sm:px-4 bg-blue-500 text-white text-sm sm:text-base font-medium rounded hover:bg-blue-600 transition-colors flex items-center gap-1 sm:gap-2 mr-2 sm:mr-4"
