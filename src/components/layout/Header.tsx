@@ -9,7 +9,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-start px-4">
         {/* Left side */}
         <div className="flex items-center">
-          <Logo className="w-8 h-8 sm:w-12 sm:h-12" />
+          {data && <Logo className="w-8 h-8 sm:w-12 sm:h-12" />}
           <div className="hidden sm:block ml-2 sm:ml-4">
             <div className="flex items-baseline gap-2">
               <h1 className="text-2xl font-bold text-white leading-none">Star Track</h1>
