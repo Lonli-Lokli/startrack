@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background with blue gradient -->
+  <defs>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#blue-gradient)" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- Star path (in white) -->
+  <path
+    d="M50 20 L54 40 L74 40 L58 52 L64 72 L50 60 L36 72 L42 52 L26 40 L46 40 Z"
+    fill="#fff"
+  />
+  
+  <!-- Santa Hat integrated with star -->
+  <path
+    d="M46 40 L50 20 L54 40 L48 35 Q50 25 52 35 Z"
+    fill="#dc2626"
+    stroke="#dc2626"
+    stroke-width="1"
+  />
+  <!-- Hat Trim -->
+  <path
+    d="M46 40 L54 40"
+    stroke="#fff"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
+  <!-- Pom-pom -->
+  <circle
+    cx="50"
+    cy="20"
+    r="3"
+    fill="#fff"
+  />
+  
+  <!-- Tracking line/orbit (in white) -->
+  <path
+    d="M50 20 Q 80 50 50 80 Q 20 50 50 20"
+    fill="none"
+    stroke="#fff"
+    stroke-width="2"
+    stroke-dasharray="4,4"
+  />
+</svg>

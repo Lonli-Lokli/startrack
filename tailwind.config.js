@@ -10,8 +10,15 @@ module.exports = {
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+  safelist: [
+    {
+      pattern: /!?bg-\[hsl\(.*\)\]/,
+    }
+  ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 };

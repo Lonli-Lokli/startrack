@@ -1,101 +1,125 @@
-# Startrack
+# StarTrack - Advent of Code Progress Visualization
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+![StarTrack Logo](logo.svg)
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+StarTrack is a modern, web-based visualization tool for Advent of Code progress tracking. It provides an elegant way to visualize your team's progress through the Advent of Code challenges.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Features
 
-## Run tasks
+- 📊 Real-time progress visualization
+- 📈 Interactive performance charts
+- 🎄 Festive, modern UI design
+- 📱 Fully responsive layout
+- 🔄 Multiple data input methods
+- 🌓 Elegant glass-morphism design
 
-To run the dev server for your app, use:
+## Getting Started
 
-```sh
-npx nx serve startrack
+### Prerequisites
+
+- Node.js (v20 or higher)
+- npm or yarn
+- A modern web browser
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/startrack.git
+cd startrack
 ```
 
-To create a production bundle:
-
-```sh
-npx nx build startrack
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
 ```
 
-To see all available targets to run for a project, run:
-
-```sh
-npx nx show project startrack
+3. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Usage
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### Importing Data
 
-## Add new projects
+StarTrack accepts Advent of Code JSON data in three ways:
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+1. **File Upload**: Drag and drop or select a JSON file
+2. **Clipboard Paste**: Copy your JSON data and paste it directly
+3. **Manual Input**: Type or paste JSON data into the text area
 
-Use the plugin's generator to create new projects.
+### Data Format
 
-To generate a new application, use:
+The input JSON should follow the Advent of Code leaderboard format:
 
-```sh
-npx nx g @nx/react:app demo
+```json
+{
+  "members": {
+    "12345": {
+      "name": "User Name",
+      "stars": 12,
+      "local_score": 100,
+      "completion_day_level": {
+        "1": {
+          "1": {"get_star_ts": 1234567890},
+          "2": {"get_star_ts": 1234567891}
+        }
+        // ... more days
+      }
+    }
+    // ... more members
+  }
+}
 ```
 
-To generate a new library, use:
+## Features in Detail
 
-```sh
-npx nx g @nx/react:lib mylib
-```
+### Progress Table
+- Team member rankings
+- Star counts and scores
+- Completion times for each challenge
+- Visual indicators for challenge completion
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+### Performance Chart
+- Timeline of star acquisitions
+- Individual progress tracking
+- Interactive tooltips
+- Custom color coding per user
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Technology Stack
 
-## Set up CI!
+- React
+- Tailwind CSS
+- Recharts
+- TypeScript
 
-### Step 1
+## Contributing
 
-To connect to Nx Cloud, run the following command:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-```sh
-npx nx connect
-```
+## License
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Acknowledgments
 
-### Step 2
+- Design inspired by modern glass-morphism trends
+- Built for the Advent of Code community
+- Special thanks to the Advent of Code team for the amazing challenges
 
-Use the following command to configure a CI workflow for your workspace:
+## Support
 
-```sh
-npx nx g ci-workflow
-```
+For support, please open an issue in the GitHub repository or contact the maintainers.
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/react-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Made with ❄️ for the Advent of Code community
