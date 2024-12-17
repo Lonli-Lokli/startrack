@@ -16,7 +16,7 @@ export function ClipboardInput() {
       
       setData(jsonData)
       setError(null)
-    } catch (err) {
+    } catch (err: any) {
       let errorMessage = 'Error reading clipboard: '
       
       if (err instanceof SyntaxError) {

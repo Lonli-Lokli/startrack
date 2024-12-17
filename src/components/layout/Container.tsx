@@ -5,8 +5,8 @@ interface ContainerProps {
   
   export function Container({ children, className = '' }: ContainerProps) {
     return (
-      <main className={`w-full h-[calc(100vh-4rem)] px-4 py-8 ${className}`}>
-        <div className="w-full h-full">
+      <main className={`absolute inset-x-0 bottom-0 top-[48px] sm:top-[64px] overflow-y-auto ${className}`}>
+        <div className="w-full h-full px-4">
           {children}
         </div>
       </main>

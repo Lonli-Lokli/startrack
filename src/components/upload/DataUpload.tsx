@@ -10,27 +10,26 @@ export function DataUpload() {
   const [showManualInput, setShowManualInput] = useState(false);
 
   return (
-    <div className="h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex items-center justify-center p-4 overflow-y-auto">
-      <div className="w-full max-w-xl">
-        {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <Logo className="w-20 h-20 md:w-24 md:h-24" />
+    <div className="w-full py-4 md:py-8">
+      <div className="w-full max-w-xl mx-auto">
+        <div className="flex justify-center mb-4 md:mb-6">
+          <Logo className="w-16 h-16 md:w-24 md:h-24" />
         </div>
 
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-xl mb-20">
           <div className="text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              StarTrack
+            <h1 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
+              Star Track
             </h1>
-            <p className="text-base md:text-lg font-medium text-blue-100">
+            <p className="text-sm md:text-lg font-medium text-blue-100">
               Code Down to Christmas
             </p>
-            <p className="text-xs md:text-sm text-blue-200 mt-2">
+            <p className="text-xs md:text-sm text-blue-200 mt-1 md:mt-2">
               Advent of Code Progress Visualization
             </p>
           </div>
 
-          <div className="mt-4 mb-6 text-xs md:text-sm text-blue-200 bg-blue-900/20 p-3 md:p-4 rounded-lg">
+          <div className="mt-3 md:mt-4 mb-4 md:mb-6 text-xs md:text-sm text-blue-200 bg-blue-900/20 p-2 md:p-4 rounded-lg">
             <p className="font-medium mb-2">
               How to get your leaderboard data:
             </p>
@@ -52,11 +51,17 @@ export function DataUpload() {
               </li>
               <li>View your private leaderboard</li>
               <li>Find and click [API] button</li>
-              <li>Copy the [JSON] link URL or its content</li>
+              <li>
+                Copy the JSON content and either:
+                <ul className="list-disc list-inside ml-4 mt-1 text-blue-300/80">
+                  <li>Save it as a .json file and drag it here</li>
+                  <li>Or paste the content directly from clipboard</li>
+                </ul>
+              </li>
             </ol>
           </div>
 
-          <div className="w-full max-w-xl space-y-6 mt-8">
+          <div className="w-full max-w-xl space-y-4 md:space-y-6 mt-6 md:mt-8">
             <FileUploadZone />
 
             <div className="relative">
